@@ -7,6 +7,7 @@ export type Runtime = {
 	strategy: typeof import("./variables.js").strategy;
 	cookieName: typeof import("./variables.js").cookieName;
 	cookieMaxAge: typeof import("./variables.js").cookieMaxAge;
+	cookieDomain: typeof import("./variables.js").cookieDomain;
 	urlPatterns: typeof import("./variables.js").urlPatterns;
 	disableAsyncLocalStorage: typeof import("./variables.js").disableAsyncLocalStorage;
 	serverAsyncLocalStorage: typeof import("./variables.js").serverAsyncLocalStorage;

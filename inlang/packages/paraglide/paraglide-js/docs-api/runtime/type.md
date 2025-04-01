@@ -20,6 +20,10 @@ The Paraglide runtime API.
 
 > **baseLocale**: [`baseLocale`](-internal-.md#baselocale)
 
+#### cookieDomain
+
+> **cookieDomain**: [`cookieDomain`](-internal-.md#cookiedomain)
+
 #### cookieMaxAge
 
 > **cookieMaxAge**: [`cookieMaxAge`](-internal-.md#cookiemaxage)
