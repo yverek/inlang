@@ -24,8 +24,8 @@ export const cookieName = "<cookie-name>";
 /** @type {number} */
 export const cookieMaxAge = 60 * 60 * 24 * 400;
 
-/** @type {string | null} */
-export const cookieDomain = null;
+/** @type {string} */
+export const cookieDomain = "<cookie-domain>";
 
 /** @type {string} */
 export const localStorageKey = "PARAGLIDE_LOCALE";

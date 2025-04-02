@@ -64,10 +64,7 @@ ${injectCode("./variables.js")
 	)
 	.replace(`<cookie-name>`, `${args.compilerOptions.cookieName}`)
 	.replace(`60 * 60 * 24 * 400`, `${args.compilerOptions.cookieMaxAge}`)
-	.replace(
-		"export const cookieDomain = null;",
-		`export const cookieDomain = ${args.compilerOptions.cookieDomain ? `"${args.compilerOptions.cookieDomain}"` : null}`
-	)
+	.replace(`<cookie-domain>`, `${args.compilerOptions.cookieDomain}`)
 	.replace(
 		`export const TREE_SHAKE_COOKIE_STRATEGY_USED = false;`,
 		`const TREE_SHAKE_COOKIE_STRATEGY_USED = ${args.compilerOptions.strategy.includes("cookie")};`

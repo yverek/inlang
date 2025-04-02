@@ -72,7 +72,7 @@ if (locale === baseLocale) {
 
 ## cookieDomain
 
-> `const` **cookieDomain**: `null` \| `string` = `null`
+> `const` **cookieDomain**: `string` = `"<cookie-domain>"`
 
 Defined in: [runtime/variables.js:28](https://github.com/opral/monorepo/tree/main/inlang/packages/paraglide/paraglide-js/src/compiler/runtime/variables.js)
 
@@ -726,7 +726,7 @@ avoid a circular import between `runtime.js` and
 
 > **overwriteSetLocale**(`fn`): `void`
 
-Defined in: [runtime/set-locale.js:126](https://github.com/opral/monorepo/tree/main/inlang/packages/paraglide/paraglide-js/src/compiler/runtime/set-locale.js)
+Defined in: [runtime/set-locale.js:124](https://github.com/opral/monorepo/tree/main/inlang/packages/paraglide/paraglide-js/src/compiler/runtime/set-locale.js)
 
 Overwrite the `setLocale()` function.
 

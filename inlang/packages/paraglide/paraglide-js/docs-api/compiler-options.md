@@ -48,16 +48,14 @@ true
 
 #### cookieDomain?
 
-> `optional` **cookieDomain**: `string` \| `null`
+> `optional` **cookieDomain**: `string`
 
 The host to which the cookie will be sent.
-If null, this defaults to the host portion of the current document location and the cookie is not available on subdomains.
-Otherwise, subdomains are always included.
 
 ##### Default
 
 ```ts
-null
+window.location.hostname
 ```
 
 #### cookieMaxAge?
@@ -344,7 +342,7 @@ Defined in: [compiler-options.ts:3](https://github.com/opral/monorepo/tree/main/
 
 #### cookieDomain
 
-> `readonly` **cookieDomain**: `null` = `null`
+> `readonly` **cookieDomain**: `""` = `""`
 
 #### cookieMaxAge
 

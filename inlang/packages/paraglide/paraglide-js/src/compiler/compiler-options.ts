@@ -13,7 +13,7 @@ export const defaultCompilerOptions = {
 	strategy: ["cookie", "globalVariable", "baseLocale"],
 	cookieName: "PARAGLIDE_LOCALE",
 	cookieMaxAge: 60 * 60 * 24 * 400,
-	cookieDomain: null,
+	cookieDomain: "",
 } as const satisfies Partial<CompilerOptions>;
 
 export type CompilerOptions = {
@@ -106,11 +106,10 @@ export type CompilerOptions = {
 	cookieMaxAge?: number;
 	/**
 	 * The host to which the cookie will be sent.
-	 * If null, this defaults to the host portion of the current document location and the cookie is not available on subdomains.
-	 * Otherwise, subdomains are always included.
-	 * @default null
+	 *
+	 * @default window.location.hostname
 	 */
-	cookieDomain?: string | null;
+	cookieDomain?: string;
 	/**
 	 * The `additionalFiles` option is an array of paths to additional files that should be copied to the output directory.
 	 *
