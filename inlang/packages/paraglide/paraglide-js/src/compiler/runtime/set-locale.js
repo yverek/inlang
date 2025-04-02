@@ -59,7 +59,7 @@ export let setLocale = (newLocale, options) => {
 
 			let cookie = `${cookieName}=${newLocale}; path=/; max-age=${cookieMaxAge}`;
 
-			if (cookieDomain) cookie += ` domain=${cookieDomain}`;
+			if (cookieDomain) cookie += `; domain=${cookieDomain}`;
 
 			// set the cookie
 			document.cookie = cookie;

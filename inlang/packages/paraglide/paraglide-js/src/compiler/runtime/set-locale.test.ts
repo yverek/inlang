@@ -36,6 +36,41 @@ test("sets the cookie to a different locale", async () => {
 	expect(globalThis.window.location.reload).toBeCalled();
 });
 
+test("sets the cookie to a different locale with explicit domain", async () => {
+	// @ts-expect-error - global variable definition
+	globalThis.document = {};
+	// @ts-expect-error - global variable definition
+	globalThis.window = {};
+	// @ts-expect-error - global variable definition
+	globalThis.window.location = {};
+	globalThis.window.location.reload = vi.fn();
+
+	const runtime = await createParaglide({
+		project: await newProject({
+			settings: {
+				baseLocale: "en",
+				locales: ["en", "de"],
+			},
+		}),
+		compilerOptions: {
+			strategy: ["cookie"],
+			cookieName: "PARAGLIDE_LOCALE",
+			cookieDomain: "example.com",
+		},
+	});
+
+	globalThis.document.cookie = "PARAGLIDE_LOCALE=en";
+
+	runtime.setLocale("de");
+
+	// set the locale
+	expect(globalThis.document.cookie).toBe(
+		"PARAGLIDE_LOCALE=de; path=/; max-age=34560000; domain=example.com"
+	);
+	// reloads the site if window is available
+	expect(globalThis.window.location.reload).toBeCalled();
+});
+
 test("url pattern strategy sets the window location", async () => {
 	// @ts-expect-error - global variable definition
 	globalThis.window = {};
